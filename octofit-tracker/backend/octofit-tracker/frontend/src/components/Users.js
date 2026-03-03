@@ -17,12 +17,31 @@ const Users = () => {
 
   return (
     <div>
-      <h2>Users</h2>
-      <ul>
-        {users.map((user, idx) => (
-          <li key={idx}>{user.name} - {user.email} ({user.team})</li>
-        ))}
-      </ul>
+      <h2 className="mb-4 text-primary">Users</h2>
+      <div className="card shadow-sm">
+        <div className="card-body">
+          <table className="table table-striped table-hover">
+            <thead className="table-primary">
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Team</th>
+              </tr>
+            </thead>
+            <tbody>
+              {users.map((user, idx) => (
+                <tr key={idx}>
+                  <td>{idx + 1}</td>
+                  <td>{user.name}</td>
+                  <td>{user.email}</td>
+                  <td>{user.team}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   );
 };
